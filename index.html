@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal website of Jane A. Smith, PhD student in Economics at the University of Illinois Urbana-Champaign." />
+  <title>Jane A. Smith</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-mid: #2e3f6f;
+      --accent: #c0392b;
+      --accent-light: #f8f0ef;
+      --text: #1c1c1e;
+      --muted: #5a5a5e;
+      --border: #dcdcdc;
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 860px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    /* SECTIONS */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    /* HOME */
+    #home {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 3rem;
+      align-items: start;
+      padding-top: 6rem;
+      padding-bottom: 5rem;
+    }
+    .home-text h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+    .home-text .role {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.6rem;
+    }
+    .home-text p {
+      color: var(--text);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .contact-row {
+      margin-top: 1.8rem;
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+    }
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-row a:hover { border-color: var(--accent); }
+    .photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .photo-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 4px;
+      background: #dde4ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--navy-mid);
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    /* DIVIDER */
+    .section-rule {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* SECTION HEADERS */
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.4rem;
+    }
+
+    /* RESEARCH */
+    .paper {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .paper:first-of-type { border-top: 1px solid var(--border); }
+    .paper-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .paper-meta {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .paper-abstract {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .badge {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .badge-wp { background: #eef2f8; color: var(--navy-mid); }
+    .badge-pub { background: var(--accent-light); color: var(--accent); }
+    .paper-links {
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+    }
+    .paper-links a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .paper-links a:hover { border-color: var(--accent); }
+
+    /* CV */
+    #cv .cv-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0;
+    }
+    .cv-row {
+      display: contents;
+    }
+    .cv-year {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.7rem 0;
+      padding-right: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-detail {
+      font-size: 0.95rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .cv-detail strong {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: block;
+      color: var(--navy);
+      margin-bottom: 0.1rem;
+    }
+    .cv-detail span {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .cv-section-heading {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1.8rem 0 0.6rem;
+      grid-column: 1 / -1;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-pdf-link {
+      margin-top: 2rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+    }
+    .cv-pdf-link a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      #home { grid-template-columns: 1fr; }
+      .photo-wrap { flex-direction: row; justify-content: flex-start; }
+      .photo-placeholder { width: 120px; height: 120px; }
+      .home-text h1 { font-size: 2rem; }
+      #cv .cv-grid { grid-template-columns: 1fr; }
+      .cv-year { border-bottom: none; padding-bottom: 0; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="#home">Jane A. Smith</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#cv">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="home-text">
+      <h1>Jane A. Smith</h1>
+      <p class="role">PhD Candidate &middot; Department of Economics &middot; University of Illinois Urbana-Champaign</p>
+      <p>
+        I am a fifth-year PhD student in Economics at the University of Illinois Urbana-Champaign,
+        where I am advised by Professor John Doe. My research lies at the intersection of
+        development economics and agricultural markets, with a focus on how smallholder farmers
+        in Sub-Saharan Africa respond to weather shocks and policy interventions.
+      </p>
+      <p>
+        I will be on the job market in 2025&ndash;2026. My job market paper studies the effects of
+        crop insurance subsidies on technology adoption and household welfare in rural Kenya.
+      </p>
+      <div class="contact-row">
+        <a href="mailto:jsmith@illinois.edu">jsmith@illinois.edu</a>
+        <a href="#">CV (PDF)</a>
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        <a href="https://x.com" target="_blank">Twitter / X</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-placeholder">
+        Photo<br/>goes here
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <p class="section-label">Research</p>
+
+    <!-- Working Papers -->
+    <p style="font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.6rem;">Working Papers</p>
+
+    <div class="paper">
+      <p class="paper-title">
+        Crop Insurance Subsidies and Technology Adoption Among Smallholder Farmers
+        <span class="badge badge-wp">Job Market Paper</span>
+      </p>
+      <p class="paper-meta">Jane A. Smith &middot; 2024</p>
+      <p class="paper-abstract">
+        This paper examines how access to subsidized crop insurance affects the adoption of
+        improved seed varieties and fertilizer use among smallholder farmers in rural Kenya.
+        Using a regression discontinuity design exploiting a program eligibility threshold,
+        I find that insurance access increases fertilizer expenditure by 18% and adoption of
+        improved seeds by 12 percentage points. The results suggest that credit constraints
+        and risk aversion interact to suppress technology adoption.
+      </p>
+      <div class="paper-links">
+        <a href="#">Paper (PDF)</a>
+        <a href="#">Slides</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <p class="paper-title">Weather Shocks, Consumption Smoothing, and Informal Insurance Networks</p>
+      <p class="paper-meta">Jane A. Smith and Robert J. Lee &middot; 2023</p>
+      <p class="paper-abstract">
+        We document how rural households in Ethiopia smooth consumption in the face of
+        idiosyncratic and aggregate rainfall shocks, using 15 years of longitudinal panel data.
+        Households with denser social networks exhibit significantly higher consumption insurance
+        against aggregate shocks, consistent with informal risk-sharing models. We find that
+        mobile money adoption weakens these informal networks for idiosyncratic shocks while
+        leaving aggregate-shock insurance unchanged.
+      </p>
+      <div class="paper-links">
+        <a href="#">Paper (PDF)</a>
+      </div>
+    </div>
+
+    <!-- Published -->
+    <p style="font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-top: 2.4rem; margin-bottom: 0.6rem;">Published &amp; Forthcoming</p>
+
+    <div class="paper">
+      <p class="paper-title">
+        Land Tenure Security and Investment Incentives: Evidence from Uganda
+        <span class="badge badge-pub">Published</span>
+      </p>
+      <p class="paper-meta">Jane A. Smith &middot; <em>Journal of Development Economics</em>, 2022</p>
+      <p class="paper-abstract">
+        I exploit a land titling program in Uganda to estimate the causal effect of tenure
+        security on long-term agricultural investment. Farmers who received formal land titles
+        increased tree planting by 23% and soil conservation measures by 15%, consistent with
+        Besley (1995). Effects are concentrated among female-headed households and those
+        near urban markets.
+      </p>
+      <div class="paper-links">
+        <a href="#">Published version</a>
+        <a href="#">Working paper</a>
+        <a href="#">Replication files</a>
+      </div>
+    </div>
+
+    <!-- Work in Progress -->
+    <p style="font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-top: 2.4rem; margin-bottom: 0.6rem;">Work in Progress</p>
+
+    <div class="paper">
+      <p class="paper-title">Market Access, Trader Competition, and Farmgate Prices in Rural Malawi</p>
+      <p class="paper-meta">Jane A. Smith, Maria Gonzalez, and Kwame Asante &middot; Draft coming soon</p>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- CV -->
+  <section id="cv">
+    <p class="section-label">Curriculum Vitae</p>
+
+    <div class="cv-grid">
+      <p class="cv-section-heading">Education</p>
+
+      <div class="cv-row">
+        <div class="cv-year">2020 &ndash; present</div>
+        <div class="cv-detail">
+          <strong>PhD in Economics</strong>
+          <span>University of Illinois Urbana-Champaign</span>
+          <span style="display:block; margin-top:2px;">Advisor: Prof. John Doe</span>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-year">2018 &ndash; 2020</div>
+        <div class="cv-detail">
+          <strong>MA in Economics</strong>
+          <span>University of Michigan</span>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-year">2014 &ndash; 2018</div>
+        <div class="cv-detail">
+          <strong>BA in Economics &amp; Statistics</strong>
+          <span>Oberlin College</span>
+        </div>
+      </div>
+
+      <p class="cv-section-heading">Fields</p>
+
+      <div class="cv-row">
+        <div class="cv-year">Primary</div>
+        <div class="cv-detail">Development Economics, Agricultural Economics</div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-year">Secondary</div>
+        <div class="cv-detail">Applied Econometrics, Environmental Economics</div>
+      </div>
+
+      <p class="cv-section-heading">Fellowships &amp; Awards</p>
+
+      <div class="cv-row">
+        <div class="cv-year">2024</div>
+        <div class="cv-detail">
+          <strong>Graduate Research Fellowship</strong>
+          <span>National Science Foundation</span>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-year">2023</div>
+        <div class="cv-detail">
+          <strong>AAEA Outstanding Paper Award</strong>
+          <span>Agricultural and Applied Economics Association</span>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-year">2021</div>
+        <div class="cv-detail">
+          <strong>Summer Research Grant</strong>
+          <span>UIUC Graduate College</span>
+        </div>
+      </div>
+
+      <p class="cv-section-heading">Teaching Experience</p>
+
+      <div class="cv-row">
+        <div class="cv-year">Fall 2023</div>
+        <div class="cv-detail">
+          <strong>Instructor of Record — ECON 302: Intermediate Microeconomics</strong>
+          <span>University of Illinois Urbana-Champaign</span>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-year">2021 &ndash; 2023</div>
+        <div class="cv-detail">
+          <strong>Teaching Assistant — ECON 490: Development Economics</strong>
+          <span>University of Illinois Urbana-Champaign</span>
+        </div>
+      </div>
+
+      <p class="cv-section-heading">Conferences &amp; Presentations</p>
+
+      <div class="cv-row">
+        <div class="cv-year">2024</div>
+        <div class="cv-detail">AAEA Annual Meeting, New Orleans &middot; NEUDC, Boston &middot; CSAE, Oxford</div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-year">2023</div>
+        <div class="cv-detail">PacDev, Davis &middot; MWIEDC, Champaign</div>
+      </div>
+    </div>
+
+    <p class="cv-pdf-link" style="margin-top: 2.4rem;">
+      Full CV available as <a href="#">PDF</a>.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Jane A. Smith &middot; Department of Economics, University of Illinois Urbana-Champaign
+  </footer>
+
+</body>
+</html>
