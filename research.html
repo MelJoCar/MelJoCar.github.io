@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Jane A. Smith</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744; --navy-mid: #2e3f6f; --accent: #c0392b;
+      --accent-light: #f8f0ef; --text: #1c1c1e; --muted: #5a5a5e;
+      --border: #dcdcdc; --bg: #fafaf8; --white: #ffffff;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 860px;
+    }
+    body { font-family: var(--serif); font-size: 18px; line-height: 1.75; color: var(--text); background: var(--bg); }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--navy); border-bottom: 1px solid var(--navy); }
+    main { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem; }
+    .section-label { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.4rem; }
+    .subsection-heading { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.6rem; }
+    .paper { padding: 1.6rem 0; border-bottom: 1px solid var(--border); }
+    .paper:first-of-type { border-top: 1px solid var(--border); }
+    .paper-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.25rem; }
+    .paper-meta { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .paper-abstract { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .badge { display: inline-block; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; margin-left: 0.5rem; vertical-align: middle; }
+    .badge-wp { background: #eef2f8; color: var(--navy-mid); }
+    .badge-pub { background: var(--accent-light); color: var(--accent); }
+    .paper-links { margin-top: 0.6rem; display: flex; gap: 1rem; font-family: var(--sans); font-size: 0.8rem; }
+    .paper-links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    .paper-links a:hover { border-color: var(--accent); }
+    .spacer { margin-top: 2.4rem; }
+    footer { background: var(--white); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin-top: 4rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="index.html">Jane A. Smith</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <p class="section-label">Research</p>
+
+    <p class="subsection-heading">Working Papers</p>
+
+    <div class="paper">
+      <p class="paper-title">
+        Crop Insurance Subsidies and Technology Adoption Among Smallholder Farmers
+        <span class="badge badge-wp">Job Market Paper</span>
+      </p>
+      <p class="paper-meta">Jane A. Smith &middot; 2024</p>
+      <p class="paper-abstract">
+        This paper examines how access to subsidized crop insurance affects the adoption of
+        improved seed varieties and fertilizer use among smallholder farmers in rural Kenya.
+        Using a regression discontinuity design exploiting a program eligibility threshold,
+        I find that insurance access increases fertilizer expenditure by 18% and adoption of
+        improved seeds by 12 percentage points. The results suggest that credit constraints
+        and risk aversion interact to suppress technology adoption.
+      </p>
+      <div class="paper-links">
+        <a href="#">Paper (PDF)</a>
+        <a href="#">Slides</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <p class="paper-title">Weather Shocks, Consumption Smoothing, and Informal Insurance Networks</p>
+      <p class="paper-meta">Jane A. Smith and Robert J. Lee &middot; 2023</p>
+      <p class="paper-abstract">
+        We document how rural households in Ethiopia smooth consumption in the face of
+        idiosyncratic and aggregate rainfall shocks, using 15 years of longitudinal panel data.
+        Households with denser social networks exhibit significantly higher consumption insurance
+        against aggregate shocks, consistent with informal risk-sharing models. We find that
+        mobile money adoption weakens these informal networks for idiosyncratic shocks while
+        leaving aggregate-shock insurance unchanged.
+      </p>
+      <div class="paper-links">
+        <a href="#">Paper (PDF)</a>
+      </div>
+    </div>
+
+    <p class="subsection-heading spacer">Published &amp; Forthcoming</p>
+
+    <div class="paper">
+      <p class="paper-title">
+        Land Tenure Security and Investment Incentives: Evidence from Uganda
+        <span class="badge badge-pub">Published</span>
+      </p>
+      <p class="paper-meta">Jane A. Smith &middot; <em>Journal of Development Economics</em>, 2022</p>
+      <p class="paper-abstract">
+        I exploit a land titling program in Uganda to estimate the causal effect of tenure
+        security on long-term agricultural investment. Farmers who received formal land titles
+        increased tree planting by 23% and soil conservation measures by 15%, consistent with
+        Besley (1995). Effects are concentrated among female-headed households and those
+        near urban markets.
+      </p>
+      <div class="paper-links">
+        <a href="#">Published version</a>
+        <a href="#">Working paper</a>
+        <a href="#">Replication files</a>
+      </div>
+    </div>
+
+    <p class="subsection-heading spacer">Work in Progress</p>
+
+    <div class="paper">
+      <p class="paper-title">Market Access, Trader Competition, and Farmgate Prices in Rural Malawi</p>
+      <p class="paper-meta">Jane A. Smith, Maria Gonzalez, and Kwame Asante &middot; Draft coming soon</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Jane A. Smith &middot; Department of Economics, University of Illinois Urbana-Champaign
+  </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Jane A. Smith</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744; --navy-mid: #2e3f6f; --accent: #c0392b;
+      --text: #1c1c1e; --muted: #5a5a5e; --border: #dcdcdc;
+      --bg: #fafaf8; --white: #ffffff;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 860px;
+    }
+    body { font-family: var(--serif); font-size: 18px; line-height: 1.75; color: var(--text); background: var(--bg); }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--navy); border-bottom: 1px solid var(--navy); }
+    main { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem; }
+    .section-label { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.4rem; }
+    .cv-grid { display: grid; grid-template-columns: 180px 1fr; gap: 0; }
+    .cv-section-heading { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 1.8rem 0 0.6rem; grid-column: 1 / -1; border-bottom: 1px solid var(--border); }
+    .cv-year { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); padding: 0.7rem 1.5rem 0.7rem 0; border-bottom: 1px solid var(--border); }
+    .cv-detail { font-size: 0.95rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); color: var(--text); }
+    .cv-detail strong { font-family: var(--sans); font-weight: 500; font-size: 0.9rem; display: block; color: var(--navy); margin-bottom: 0.1rem; }
+    .cv-detail span { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); }
+    .cv-pdf-link { margin-top: 2.4rem; font-family: var(--sans); font-size: 0.82rem; }
+    .cv-pdf-link a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+    footer { background: var(--white); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin-top: 4rem; }
+    @media (max-width: 640px) {
+      .cv-grid { grid-template-columns: 1fr; }
+      .cv-year { border-bottom: none; padding-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="index.html">Jane A. Smith</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <p class="section-label">Curriculum Vitae</p>
+
+    <div class="cv-grid">
+      <p class="cv-section-heading">Education</p>
+      <div class="cv-year">2020 &ndash; present</div>
+      <div class="cv-detail">
+        <strong>PhD in Economics</strong>
+        <span>University of Illinois Urbana-Champaign</span>
+        <span style="display:block; margin-top:2px;">Advisor: Prof. John Doe</span>
+      </div>
+      <div class="cv-year">2018 &ndash; 2020</div>
+      <div class="cv-detail">
+        <strong>MA in Economics</strong>
+        <span>University of Michigan</span>
+      </div>
+      <div class="cv-year">2014 &ndash; 2018</div>
+      <div class="cv-detail">
+        <strong>BA in Economics &amp; Statistics</strong>
+        <span>Oberlin College</span>
+      </div>
+
+      <p class="cv-section-heading">Fields</p>
+      <div class="cv-year">Primary</div>
+      <div class="cv-detail">Development Economics, Agricultural Economics</div>
+      <div class="cv-year">Secondary</div>
+      <div class="cv-detail">Applied Econometrics, Environmental Economics</div>
+
+      <p class="cv-section-heading">Fellowships &amp; Awards</p>
+      <div class="cv-year">2024</div>
+      <div class="cv-detail">
+        <strong>Graduate Research Fellowship</strong>
+        <span>National Science Foundation</span>
+      </div>
+      <div class="cv-year">2023</div>
+      <div class="cv-detail">
+        <strong>AAEA Outstanding Paper Award</strong>
+        <span>Agricultural and Applied Economics Association</span>
+      </div>
+      <div class="cv-year">2021</div>
+      <div class="cv-detail">
+        <strong>Summer Research Grant</strong>
+        <span>UIUC Graduate College</span>
+      </div>
+
+      <p class="cv-section-heading">Teaching Experience</p>
+      <div class="cv-year">Fall 2023</div>
+      <div class="cv-detail">
+        <strong>Instructor of Record — ECON 302: Intermediate Microeconomics</strong>
+        <span>University of Illinois Urbana-Champaign</span>
+      </div>
+      <div class="cv-year">2021 &ndash; 2023</div>
+      <div class="cv-detail">
+        <strong>Teaching Assistant — ECON 490: Development Economics</strong>
+        <span>University of Illinois Urbana-Champaign</span>
+      </div>
+
+      <p class="cv-section-heading">Conferences &amp; Presentations</p>
+      <div class="cv-year">2024</div>
+      <div class="cv-detail">AAEA Annual Meeting, New Orleans &middot; NEUDC, Boston &middot; CSAE, Oxford</div>
+      <div class="cv-year">2023</div>
+      <div class="cv-detail">PacDev, Davis &middot; MWIEDC, Champaign</div>
+    </div>
+
+    <p class="cv-pdf-link">Full CV available as <a href="#">PDF</a>.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Jane A. Smith &middot; Department of Economics, University of Illinois Urbana-Champaign
+  </footer>
+</body>
+</html>
